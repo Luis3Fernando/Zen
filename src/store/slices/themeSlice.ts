@@ -1,35 +1,36 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
 import type { Theme } from '../../interface/theme';
+import { themeComponents } from '../../themes/themeList';
 
-const initialTheme: Theme = {
-    name: 'zen',
-    colors: {
-        background: '#f9c5d1',
-        text: '#3d2c41',
-        accent: '#eec0c6',
-    },
-};
+interface ThemeState {
+  theme: Theme;
+  index: number;
+}
 
-type ThemeState = {
-    current: Theme;
-};
+const initialIndex = 0;
 
 const initialState: ThemeState = {
-    current: initialTheme,
+  theme: { name: themeComponents[initialIndex].name, colors: { background: '#f0f0f0', text: '#333', accent: '#4CAF50' } },
+  index: initialIndex,
 };
 
-const themeSlice = createSlice({
-    name: 'theme',
-    initialState,
-    reducers: {
-        setTheme: (state, action: PayloadAction<Theme>) => {
-            state.current = action.payload;
-        },
-        resetTheme: (state) => {
-            state.current = initialTheme;
-        },
+export const themeSlice = createSlice({
+  name: 'theme',
+  initialState,
+  reducers: {
+    setTheme: (state, action: PayloadAction<Theme>) => {
+      state.theme = action.payload;
     },
+    nextTheme: (state) => {
+      state.index = (state.index + 1) % themeComponents.length;
+      state.theme.name = themeComponents[state.index].name;
+    },
+    prevTheme: (state) => {
+      state.index = (state.index - 1 + themeComponents.length) % themeComponents.length;
+      state.theme.name = themeComponents[state.index].name;
+    },
+  },
 });
 
-export const { setTheme, resetTheme } = themeSlice.actions;
+export const { setTheme, nextTheme, prevTheme } = themeSlice.actions;
 export default themeSlice.reducer;

@@ -1,23 +1,19 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import type { RootState } from '../store/store';
-import { setTheme, resetTheme } from '../store/slices/themeSlice';
-import type { Theme } from '../interface/theme';
+import { setTheme, nextTheme, prevTheme } from '../store/slices/themeSlice';
 
 export const useTheme = () => {
-    const dispatch = useDispatch();
-    const theme = useSelector((state: RootState) => state.theme.current);
+  const theme = useSelector((state: RootState) => state.theme.theme);
+  const dispatch = useDispatch();
 
-    const updateTheme = (newTheme: Theme) => {
-        dispatch(setTheme(newTheme));
-    };
+  const changeTheme = (themeName: string) => {
+    dispatch(setTheme({ name: themeName, colors: { background: '#f0f0f0', text: '#333', accent: '#4CAF50' } }));
+  };
 
-    const restoreDefaultTheme = () => {
-        dispatch(resetTheme());
-    };
-
-    return {
-        theme,
-        updateTheme,
-        restoreDefaultTheme,
-    };
+  return {
+    theme,
+    changeTheme,
+    nextTheme: () => dispatch(nextTheme()),
+    prevTheme: () => dispatch(prevTheme()),
+  };
 };
