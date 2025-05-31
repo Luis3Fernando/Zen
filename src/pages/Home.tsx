@@ -1,12 +1,13 @@
-import Header from '../components/Header';
 import Main from '../components/Main';
+import DefaultLayout from '../layout/DefaultLayout';
 
 
 function Home() {
   return (
     <>
-      <Header></Header>
-      <Main></Main>
+      <DefaultLayout>
+        <Main />
+      </DefaultLayout>
     </>
   )
 }
