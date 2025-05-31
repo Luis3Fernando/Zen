@@ -1,7 +1,7 @@
 
 function Winter() {
     return (
-        <div className="fixed inset-0 bg-gradient-to-b from-orange-200 to-yellow-200 transition-all duration-500" />
+        <div className="fixed inset-0 bg-gradient-to-b from-orange-900 to-yellow-400 transition-all duration-500" />
     )
 }
 

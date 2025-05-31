@@ -13,11 +13,11 @@ const DefaultLayout = ({ children }: { children: React.ReactNode }) => {
   const Background = backgrounds[theme.name.toLowerCase()] || Zen;
 
   return (
-    <div className="relative w-full min-h-screen overflow-hidden">
+    <div className="relative w-full h-screen overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-full z-0">
         <Background />
       </div>
-      <div className="relative z-10">
+      <div className="relative z-10 h-screen">
         <Header />
         {children}
       </div>
