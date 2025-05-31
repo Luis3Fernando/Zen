@@ -4,11 +4,11 @@ import { GoSun } from "react-icons/go";
 import { useTime } from '../hooks/useTime';
 
 function Main() {
-    const { updateTime, start, time } = useTime();
+    const { updateTimeFromMinutes, start, time } = useTime();
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const value = parseInt(e.target.value);
-        updateTime(isNaN(value) ? 0 : value);
+        updateTimeFromMinutes(isNaN(value) ? 0 : value);
     };
 
     const handleStart = () => {

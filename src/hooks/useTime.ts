@@ -11,11 +11,16 @@ import {
 export const useTime = () => {
     const dispatch = useDispatch();
     const time = useSelector((state: RootState) => state.time.time);
+    const initialTime = useSelector((state: RootState) => state.time.initialTime);
     const started = useSelector((state: RootState) => state.time.started);
     const paused = useSelector((state: RootState) => state.time.paused);
 
     const updateTime = (newTime: number) => {
         dispatch(setTime(newTime));
+    };
+
+    const updateTimeFromMinutes = (minutes: number) => {
+        updateTime(minutes * 60);
     };
 
     const start = () => {
@@ -36,12 +41,16 @@ export const useTime = () => {
 
     return {
         time,
+        initialTime,
         started,
         paused,
         updateTime,
+        updateTimeFromMinutes,
         start,
         pause,
         resume,
         reset,
     };
 };
+
+

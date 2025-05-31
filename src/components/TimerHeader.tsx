@@ -18,6 +18,7 @@ const TimerHeader = () => {
                 <IoArrowBack size={22} />
             </a>
             <button
+                type="button"
                 className="bg-white/10 px-4 py-2 rounded hover:bg-white/20 transition"
                 onClick={reset}
             >
