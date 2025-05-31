@@ -2,6 +2,8 @@ import { useTheme } from '../hooks/useTheme';
 import Zen from '../themes/Zen';
 import Winter from '../themes/Winter';
 import Header from '../components/Header';
+import TimerHeader from '../components/TimerHeader';
+import { useTime } from '../hooks/useTime';
 
 const backgrounds: { [key: string]: React.FC } = {
   zen: Zen,
@@ -11,14 +13,16 @@ const backgrounds: { [key: string]: React.FC } = {
 const DefaultLayout = ({ children }: { children: React.ReactNode }) => {
   const { theme } = useTheme();
   const Background = backgrounds[theme.name.toLowerCase()] || Zen;
+  const { started } = useTime();
 
   return (
     <div className="relative w-full h-screen overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-full z-0">
         <Background />
       </div>
-      <div className="relative z-10 h-screen">
-        <Header />
+
+      <div className="relative z-10 h-full">
+        {!started ? <Header /> : <TimerHeader />}
         {children}
       </div>
     </div>
