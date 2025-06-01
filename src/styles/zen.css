@@ -1,94 +1,131 @@
-/* zen.css */
 .zen-background {
   position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(to bottom,
+      #42386C 10%,
+      #B33570 50%,
+      #F97C7A 100%);
   overflow: hidden;
-  background: linear-gradient(to bottom, #db2777, #a21caf); /* from-pink-600 to-purple-600 */
   z-index: 0;
 }
 
-
-.zen-moon {
+.moon {
   position: absolute;
-  top: 10%;
-  right: 10%;
+  top: 10vh;
+  right: 10vw;
   width: 100px;
   height: 100px;
-  background: #fff5cc;
+  background: radial-gradient(circle at center, #fff8cc 60%, #f0e68c 90%, #cfcf85 100%);
   border-radius: 50%;
-  box-shadow: 0 0 20px #fff5cc88;
-  animation: float 10s ease-in-out infinite;
-  z-index: 1;
+  box-shadow:
+    0 0 15px 5px rgba(255, 248, 204, 0.7),
+    0 0 30px 15px rgba(255, 248, 204, 0.4);
+  z-index: 5;
+  pointer-events: none;
 }
 
-.zen-mountains {
+.mountain-main {
   position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 30%;
-  background: linear-gradient(to top, #2b1d42 0%, transparent 100%);
-  clip-path: polygon(0% 100%, 10% 60%, 20% 70%, 30% 50%, 40% 65%, 50% 45%, 60% 65%, 70% 50%, 80% 70%, 90% 55%, 100% 100%);
-  z-index: 2;
+  bottom: -50vh;
+  right: -30vw;
+  width: 80vw;
+  height: 70vh;
+  background-color: black;
+  border-radius: 60% / 100%;
+  z-index: 1;
+  pointer-events: none;
+  box-shadow:
+    0 0 15px 5px #CB4E74,
+    0 0 30px 15px #CB4E74;
 }
 
-.zen-birds {
+.mountain-secondary {
+  position: absolute;
+  bottom: -40vh;
+  left: -25vw;
+  width: 60vw;
+  height: 60vh;
+  background-color: #110E1B;
+  border-radius: 50% / 100%;
+  z-index: 1;
+  pointer-events: none;
+  box-shadow:
+    0 0 12px 4px #E06376,
+    0 0 25px 10px #93366F;
+}
+
+.mountain-tertiary {
+  position: absolute;
+  bottom: -80vh;
+  left: 43%;
+  transform: translateX(-50%);
+  width: 50vw;
+  height: 50vw;
+  background-color: #050407;
+  border-radius: 50%;
+  z-index: 1;
+  pointer-events: none;
+  box-shadow:
+    0 0 12px 1px #93366F,
+    0 0 25px 1px #E06376;
+}
+
+.orion-box {
   position: absolute;
   top: 20%;
-  left: 0;
-  width: 100%;
-  height: 200px;
-  pointer-events: none;
+  left: 10%;
+  width: 300px;
+  height: 300px;
+  transform: translate(-50%, -50%) rotate(-75deg);
   z-index: 3;
+  pointer-events: none;
 }
 
-.bird {
-  width: 30px;
-  height: 20px;
-  background: transparent;
-  border-top: 2px solid white;
-  border-left: 2px solid white;
-  transform: rotate(-45deg);
+.star {
   position: absolute;
-  animation: fly 20s linear infinite;
+  width: 3px;
+  height: 3px;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0 0 4px white;
 }
 
-.bird.delay-1 {
-  animation-delay: 3s;
-  top: 50px;
-  left: 0;
+.meissa { top: 5%; left: 50%; }        
+.betelgeuse { top: 25%; left: 30%; }  
+.bellatrix { top: 25%; left: 70%; }  
+.mintaka { top: 45%; left: 35%; }
+.alnilam { top: 50%; left: 50%; }     
+.alnitak { top: 55%; left: 65%; }     
+.saiph { top: 75%; left: 40%; } 
+.rigel { top: 80%; left: 70%; }     
+.arc1 { top: 35%; left: 80%; }
+.arc2 { top: 40%; left: 85%; }
+.arc3 { top: 45%; left: 90%; }
+
+.twinkling-star {
+  width: 3px;
+  height: 3px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 10%;
+  right: 18%;
+  animation: starTwinkle 32s infinite;
+  box-shadow: 0 0 1px 1px white;
 }
 
-.bird.delay-2 {
-  animation-delay: 6s;
-  top: 100px;
-  left: -50px;
-}
-
-@keyframes fly {
-  0% {
-    transform: translateX(0) translateY(0) rotate(-45deg);
-    opacity: 0;
-  }
-  10% {
+@keyframes starTwinkle {
+  0%, 25% {
     opacity: 1;
+    box-shadow: 0 0 5px 2px white;
   }
-  90% {
-    opacity: 1;
+  50%, 75% {
+    opacity: 0.2;
+    box-shadow: 0 0 3px 1px white;
   }
   100% {
-    transform: translateX(100vw) translateY(-50px) rotate(-45deg);
-    opacity: 0;
-  }
-}
-
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px);
+    opacity: 1;
+    box-shadow: 0 0 5px 2px white;
   }
 }
