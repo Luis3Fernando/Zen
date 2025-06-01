@@ -2,6 +2,7 @@ import '../styles/main.css';
 import { IoTimeOutline } from "react-icons/io5";
 import { GoSun } from "react-icons/go";
 import { useTime } from '../hooks/useTime';
+import { toast } from 'react-hot-toast';
 
 function Main() {
     const { updateTimeFromMinutes, start, time } = useTime();
@@ -12,6 +13,9 @@ function Main() {
     };
 
     const handleStart = () => {
+        if(time<=0){
+            toast.error('Set a time ');
+        }
         if (time > 0) start();
     };
 

@@ -44,6 +44,13 @@ const CountdownCircular = () => {
     const minutes = Math.floor(time / 60);
     const seconds = time % 60;
 
+    useEffect(() => {
+        const minutes = Math.floor(time / 60).toString().padStart(2, '0');
+        const seconds = (time % 60).toString().padStart(2, '0');
+        document.title = `${minutes}:${seconds}`;
+    }, [time]);
+
+
     return (
         <div className="flex justify-center items-center min-h-screen transition-all duration-500">
             <svg width="350" height="350" className="relative">

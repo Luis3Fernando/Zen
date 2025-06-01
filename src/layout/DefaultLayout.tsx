@@ -1,13 +1,11 @@
 import { useTheme } from '../hooks/useTheme';
 import Zen from '../themes/Zen';
-import Winter from '../themes/Winter';
 import Header from '../components/Header';
 import TimerHeader from '../components/TimerHeader';
 import { useTime } from '../hooks/useTime';
 
 const backgrounds: { [key: string]: React.FC } = {
   zen: Zen,
-  winter: Winter,
 };
 
 const DefaultLayout = ({ children }: { children: React.ReactNode }) => {
