@@ -6,7 +6,7 @@ const Header = () => {
   const { theme, nextTheme, prevTheme } = useTheme();
 
   return (
-    <header className="w-full flex justify-center mt-1">
+    <header className="w-full flex justify-center mt-5">
       <div className="w-[90%] max-w-4xl flex justify-between items-center px-6 py-3 bg-white/10 backdrop-blur-md rounded-md">
         {/* Selector de temas */}
         <div className="flex items-center">
