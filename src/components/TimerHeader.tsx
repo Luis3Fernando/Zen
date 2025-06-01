@@ -12,7 +12,7 @@ const TimerHeader = () => {
     return (
         <header className="absolute top-0 left-0 w-full p-4 flex justify-start gap-4 text-white font-light">
             <a
-                href="/"
+                href="/Zen"
                 className="bg-white/10 px-4 py-2 rounded hover:bg-white/20 transition"
             >
                 <IoArrowBack size={22} />
