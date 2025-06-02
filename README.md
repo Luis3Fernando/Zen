@@ -1,54 +1,35 @@
-# React + TypeScript + Vite
+# ZEN 
+<img src="src/assets/icons/zen.png" alt="zen" width="50"/>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Version](https://img.shields.io/badge/version-1.0.0-D95C75) ![Language](https://img.shields.io/badge/language-Typescript-D95C75) ![Status](https://img.shields.io/badge/status-Completed-D95C75)
+![Stars](https://img.shields.io/github/stars/Luis3Fernando/Zen?style=social)
 
-Currently, two official plugins are available:
+ZEN is a timer application based on the Pomodoro technique, designed to help you work in a focused and conscious way. It combines simplicity, functionality and a clean design so you can manage your time efficiently, reduce distractions and take care of your mental health.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🚀 Start
+Click on the following link to use the application: https://luis3fernando.github.io/Zen/
+If you want to download it or adapt it to your environment, follow the steps to run it on your local computer:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```bash
+git clone https://github.com/Luis3Fernando/Zen
+```
+```bash
+cd Zen
+```
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+npm run dev
 ```
+
+---
+
+## 📸 Screenshots 
+<img src="src/assets/screenshots/home.png" width="600"/>
+
+<img src="src/assets/screenshots/timer.png" width="600"/>
+
