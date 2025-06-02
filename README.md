@@ -1,5 +1,5 @@
 # ZEN 
-<img src="src/assets/icons/zen.png" alt="zen" width="50"/>
+<img src="src/assets/icon/zen.png" alt="zen" width="50"/>
 
 ![Version](https://img.shields.io/badge/version-1.0.0-D95C75) ![Language](https://img.shields.io/badge/language-Typescript-D95C75) ![Status](https://img.shields.io/badge/status-Completed-D95C75)
 ![Stars](https://img.shields.io/github/stars/Luis3Fernando/Zen?style=social)
