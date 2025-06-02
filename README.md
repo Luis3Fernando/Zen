@@ -10,6 +10,7 @@ ZEN is a timer application based on the Pomodoro technique, designed to help you
 
 ## 🚀 Start
 Click on the following link to use the application: https://luis3fernando.github.io/Zen/
+
 If you want to download it or adapt it to your environment, follow the steps to run it on your local computer:
 
 ```bash
